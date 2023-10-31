@@ -1,4 +1,3 @@
-"homepage": "https://tmsoftwarevn.github.io/Landing-Page/",
 
 # Getting Started with Create React App
 

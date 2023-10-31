@@ -44,22 +44,22 @@ function AdminPage() {
       const dataBody = {
         code: "1236950748",
       };
-      fetch("https://tmsoftware.vn/Woay/select.php", {
-        method: "POST",
-        body: JSON.stringify(dataBody),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => response.text())
-        .then(console.log)
-        .then((result) => {
-          setValueData(result);
-        })
-        .catch((error) => {
-          // Handle any error that occurred during the request
-          console.error(error);
-        });
+      // fetch("https://tmsoftware.vn/Woay/select.php", {
+      //   method: "POST",
+      //   body: JSON.stringify(dataBody),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // })
+      //   .then((response) => response.text())
+      //   .then(console.log)
+      //   .then((result) => {
+      //     setValueData(result);
+      //   })
+      //   .catch((error) => {
+      //     // Handle any error that occurred during the request
+      //     console.error(error);
+      //   });
     }
   };
   const handleChangePage = (event, newPage) => {
