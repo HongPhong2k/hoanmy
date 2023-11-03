@@ -1,8 +1,9 @@
 import "./Result.scss";
 import FormUser from "../form/Form";
-import logoden from "../../image/Che Ngon 3N logo-den.png";
-import bgketqua from "../../image/ketquache.jpg";
+
+import bgketqua from "../../image/bg-ketqua.png";
 import { MdOutlineCancel } from "react-icons/md";
+
 const Result = (props) => {
   const {
     handleQuay,
@@ -17,12 +18,7 @@ const Result = (props) => {
       <div className="blur"></div>
       <div className="content">
         <img src={bgketqua} alt="anh" className="anh-ketqua" />
-        <img
-          src={logoden}
-          alt="logo"
-          className="logo"
-          onClick={() => window.open("https://chengon3n.com/", "_blank")}
-        />
+
         <div
           className="btn-cancel"
           onClick={() => {
@@ -40,12 +36,14 @@ const Result = (props) => {
         ) : (
           <>
             <div className="gift">
-              <p>
-                Chúc mừng bạn đã trúng phần thưởng: <span>{result}</span>
+              <p className="gift__g">
+                Chúc mừng bạn đã trúng phần quà: <span>{result}</span>
               </p>
             </div>
-            <div className="call">
-              <p>Để lại thông tin nhận ngay quà xịn !</p>
+            <div className="text-info">
+              <p className="text-info__t">
+                Để lại thông tin nhận ngay quà xịn !
+              </p>
             </div>
             <div className="info">
               <FormUser
@@ -56,6 +54,13 @@ const Result = (props) => {
               />
             </div>
           </>
+          // <>
+          //   <ModalCss
+          //     handleQuay={handleQuay}
+          //     hanleOffModalButton={hanleOffModalButton}
+          //     handleSetModalButton={handleSetModalButton}
+          //   />
+          // </>
         )}
       </div>
     </div>

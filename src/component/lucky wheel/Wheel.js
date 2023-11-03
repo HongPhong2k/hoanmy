@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
-import bgvongquay from "../../image/ketquache.jpg";
-import logoden from "../../image/Che Ngon 3N logo-den.png";
+import anh2 from "../../image/anh2.png";
+
 import muiten from "../../image/mui ten.png";
-import vongquay from "../../image/VongQuay Khai Truong Che Ngon 3N-08.png";
-import quayngay from "../../image/quay_ngay.png";
+import vongquay from "../../image/vongquay.png";
+import quayngay from "../../image/NutVongQuay.png";
 import "./Wheel.scss";
 const Wheel = (props) => {
   const { handleQuay, getResult } = props;
@@ -12,25 +12,15 @@ const Wheel = (props) => {
   const wheelRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // const values = [
-  //   "Truyệt nách Hàn Băng New Elight",
-  //   "Tắm trắng Face Tinh Thể Tuyết",
-  //   "Trị Thâm nách ND-YAD",
-  //   "Gội đầu dưỡng sinh",
-  //   "Cấy trắng Mặt Enzym Pack Hàn Quốc",
-  //   "Se khít làm hồng cô Bé",
-  //   "Điều trị tiền đình vai gáy Trung Hoa - YST",
-  //   "Căng bóng da Baby Face",
-  // ];
   const values = [
-    "Chè Bưởi",
-    "Chè Dừa Non hạt Đác",
-    "Chè Khoai Dẻo Đậu Đỏ",
-    "Chè Thập Cẩm Miền Trung",
-    "Chè Sen Long Nhãn",
-    "Chè Hạt Đác Thập Cẩm",
-    "Chè Thái Sầu Riêng",
-    "Chè Khúc Bạch",
+    "Tee Golf",
+    "Voucher giảm 01 triệu lớp học Golf",
+    "Nón Golf",
+    "Voucher 1 game 18 lỗ",
+    "Bóng Golf",
+    "Voucher 1 giờ practice",
+    "Voucher 100k",
+    "Găng tay Golf",
   ];
 
   const spinWheel = () => {
@@ -80,13 +70,7 @@ const Wheel = (props) => {
   return (
     <>
       <div className="vongquay-container">
-        <img src={bgvongquay} alt="anh" className="anh_2" />
-        <img
-          src={logoden}
-          alt="anh logo"
-          className="logo"
-          onClick={() => window.open("https://chengon3n.com/", "_blank")}
-        />
+        <img src={anh2} alt="anh" className="anh_2" />
 
         <div className="vongquay">
           <img src={muiten} alt="vong quay" className="arrow" />

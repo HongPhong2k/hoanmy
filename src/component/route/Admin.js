@@ -11,6 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
+import "../../App.css";
+import { message } from "antd";
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
   { field: "nameFull", headerName: "Họ và tên", width: 180 },
@@ -34,33 +36,57 @@ function AdminPage() {
   let navigate = useNavigate();
   useEffect(() => {
     getCustomer();
-    // ref.current.ownerDocument.body.scrollTop = 0;
-  }, []);
+  }, [valueData]);
   const getCustomer = () => {
     const storedValue = localStorage.getItem("TMVongQuayUser");
-    // if (!storedValue) {
-    //   //navigate("/login");
-    // } else {
+    if (!storedValue) {
+      navigate("/login");
+    } else {
+      const dataBody = {
+        code: "4453019749",
+      };
+      fetch("https://tmsoftware.vn/Woay/API/select.php", {
+        method: "POST",
+        body: JSON.stringify(dataBody),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          setValueData(result);
+        })
+        .catch((error) => {
+          // Handle any error that occurred during the request
+          console.error(error);
+        });
+    }
+  };
+  const handleDeleteUser = (phone) => {
     const dataBody = {
-      code: "1236950748",
+      code: "4453019749",
+      phone: phone,
     };
-    fetch("https://tmsoftware.vn/Woay/select.php", {
+    fetch("https://tmsoftware.vn/Woay/API/delete.php", {
       method: "POST",
       body: JSON.stringify(dataBody),
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
+      .then((response) => response.text())
       .then((result) => {
-        setValueData(result);
+        console.log("delete", result);
+        if (result && result === "success") {
+          message.success("Xóa thành công");
+        } else {
+          message.error("Có lỗi xảy ra");
+        }
       })
       .catch((error) => {
-        // Handle any error that occurred during the request
         console.error(error);
       });
   };
-  //};
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -68,6 +94,9 @@ function AdminPage() {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
+  };
+  const handleChangePassword = () => {
+    navigate("/password");
   };
   return (
     <div style={{ padding: "10px" }}>
@@ -91,6 +120,22 @@ function AdminPage() {
             sheet="tablexls"
             buttonText="Tải file"
           />
+        </div>
+        <div>
+          <button
+            onClick={handleChangePassword}
+            style={{
+              padding: "7px",
+              backgroundColor: "#ccc",
+              alignItems: "center",
+              display: "flex",
+              marginLeft: "15px",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            Đổi mật khẩu
+          </button>
         </div>
       </div>
       <div style={{ height: "86vh", width: "100%" }}>
@@ -158,6 +203,17 @@ function AdminPage() {
                   >
                     Ngày
                   </TableCell>
+                  <TableCell
+                    align="left"
+                    sx={{
+                      width: 30,
+                      backgroundColor: "teal",
+                      color: "white",
+                      padding: "7px",
+                    }}
+                  >
+                    Hành động
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -188,6 +244,20 @@ function AdminPage() {
                           </TableCell>
                           <TableCell style={{ padding: "8px" }}>
                             {row.ngay}
+                          </TableCell>
+                          <TableCell
+                            style={{
+                              padding: "8px",
+                            }}
+                          >
+                            <Button
+                              variant="contained"
+                              onClick={() => {
+                                handleDeleteUser(row.phone);
+                              }}
+                            >
+                              Delete
+                            </Button>
                           </TableCell>
                         </TableRow>
                       );

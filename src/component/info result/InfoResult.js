@@ -9,10 +9,10 @@ const InfoResult = (props) => {
         <div className="group">
           <p className="a">cảm ơn bạn đã xác nhận thông tin !</p>
           <p style={{ marginTop: "10px" }}>
-            Đây là phần thưởng của bạn: <span>{result}</span>
+            Đây là phần quà của bạn: <span>{result}</span>
           </p>
           <p style={{ marginTop: "20px" }}>
-            Chúc bạn có những giây phút vui vẻ tại chè ngon!
+            Chúc bạn có những giây phút vui vẻ tại Themastersgolflounge!
           </p>
           <div
             className="btn-off"

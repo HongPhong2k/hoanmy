@@ -17,14 +17,15 @@ const FormUser = (props) => {
   };
   const callAPI = () => {
     const dataBody = {
-      code: "1236950748",
+      code: "4453019749",
       name: name,
       phone: phone,
       prize: result,
-      ngay: "",
+      sex: "",
+      address: "",
     };
 
-    fetch("https://tmsoftware.vn/Woay/add.php", {
+    fetch("https://tmsoftware.vn/Woay/API/add.php", {
       method: "POST",
       body: JSON.stringify(dataBody),
       headers: {
@@ -33,7 +34,6 @@ const FormUser = (props) => {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("data", dataBody);
         console.log("check result api: ", result);
 
         if (result && result["message"] === "already") {
@@ -65,7 +65,7 @@ const FormUser = (props) => {
     }
     if (
       phone.length < 10 ||
-      phone.length > 11 ||
+      phone.length > 10 ||
       phone.match(/^[0-9]+$/) == null
     ) {
       message.error("Số điện thoại không đúng");
@@ -73,10 +73,9 @@ const FormUser = (props) => {
     }
 
     if (name && phone) {
-      //callAPI();
-      setModalFinalResult(true);
-      handleSetModalButton(true);
-      handleQuay(false);
+      callAPI();
+
+      //localStorage.setItem("TMWheel", "OK");
     }
   };
 
@@ -89,7 +88,6 @@ const FormUser = (props) => {
         onChange={(e) => {
           handleSetName(e);
         }}
-        // style={{ border: "1px solid red" }}
       ></input>
 
       <input

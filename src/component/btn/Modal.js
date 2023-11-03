@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import bgvongquay from "../../image/ketquache.jpg";
-import vongquay from "../../image/VongQuay Khai Truong Che Ngon 3N-08.png";
-import logoden from "../../image/Che Ngon 3N logo-den.png";
+import anh2 from "../../image/anh2.png";
+import vongquay from "../../image/vongquay.png";
 import "./Modal.scss";
 import { MdOutlineCancel } from "react-icons/md";
-import quayngay from "../../image/quay_ngay.png";
+import quayngay from "../../image/NutVongQuay.png";
 import muiten from "../../image/mui ten.png";
 const Modal = (props) => {
   const { handleQuay, getResult, resetModalWheel, handleSetModalButton } =
@@ -18,14 +17,14 @@ const Modal = (props) => {
   const refOutside = useRef(null);
 
   const values = [
-    "Chè Bưởi",
-    "Chè Dừa Non hạt Đác",
-    "Chè Khoai Dẻo Đậu Đỏ",
-    "Chè Thập Cẩm Miền Trung",
-    "Chè Sen Long Nhãn",
-    "Chè Hạt Đác Thập Cẩm",
-    "Chè Thái Sầu Riêng",
-    "Chè Khúc Bạch",
+    "Tee Golf",
+    "Voucher giảm 01 triệu lớp học Golf",
+    "Nón Golf",
+    "Voucher 1 game 18 lỗ",
+    "Bóng Golf",
+    "Voucher 1 giờ practice",
+    "Voucher 100k",
+    "Găng tay Golf",
   ];
 
   const spinWheel = () => {
@@ -92,13 +91,8 @@ const Modal = (props) => {
   return (
     <>
       <div className="modal-quay" ref={refOutside}>
-        <img src={bgvongquay} alt="anh" className="anh-modal" />
-        <img
-          src={logoden}
-          alt="logo"
-          className="logo-modal"
-          onClick={() => window.open("https://chengon3n.com/", "_blank")}
-        />
+        <img src={anh2} alt="anh" className="anh-modal" />
+
         <div className="vongquay-modal">
           <img src={muiten} alt="anh" className="arrow-modal" />
           <img

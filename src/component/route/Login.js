@@ -33,29 +33,27 @@ function LoginPage() {
       user: valueUserName,
       password: valuePass,
     };
-    // fetch("https://hoangthongtelecom.com/SPA/API/user/Login/index.php", {
-    //   method: "POST",
-    //   body: JSON.stringify(dataBody),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     const token = result["token"];
-    //     localStorage.setItem("TMVongQuayToken", token);
-    //     localStorage.setItem("TMVongQuayUser", "7075399");
 
-    //     // localStorage.setItem("TM_Name_Shop", valueSpaName);
-    //     // localStorage.setItem("TM_loginTimestamp", new Date().getTime());
-    //     navigate("/admin");
-    //   })
-    //   .catch((error) => {
-    //     setOpen(false);
-    //     setValueThongBao("Tên đăng nhập hoặc mật khẩu không đúng");
-    //     // Handle any error that occurred during the request
-    //     console.error(error);
-    //   });
+    fetch("https://tmsoftware.vn/Woay/User/index.php", {
+      method: "POST",
+      body: JSON.stringify(dataBody),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        const token = result["token"];
+        localStorage.setItem("TMVongQuayToken", token);
+        localStorage.setItem("TMVongQuayUser", "4453019749");
+        navigate("/admin");
+      })
+      .catch((error) => {
+        setOpen(false);
+        setValueThongBao("Tên đăng nhập hoặc mật khẩu không đúng");
+        // Handle any error that occurred during the request
+        console.error(error);
+      });
   };
   const [open, setOpen] = React.useState(false);
 
@@ -66,9 +64,12 @@ function LoginPage() {
     <div className="content-register-page">
       <Card sx={{ minWidth: 375 }}>
         <CardHeader
-          title="CHE NGON 3N"
+          title="Themastersgolflounge"
           subheader="Đăng nhập tài khoản"
-          style={{ color: "blue", fontWeight: 900 }}
+          style={{
+            color: "blue",
+            fontWeight: 900,
+          }}
         />
         <CardContent style={{ textAlign: "start" }}>
           <div style={{ margin: 10 }}>

@@ -1,34 +1,12 @@
 @import '../css/media.scss';
 @import '../css/reset.scss';
+
 .vongquay-container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    .logo {
-        position: absolute;
-        cursor: pointer;
-        @include xs {
-            width: 20%;
-            top: 20px;
-            left: 20px;
-        }
-        @include sm {
-            width: 20%;
-            top: 20px;
-            left: 20px;
-        }
-        @include lg {
-            width: 200px;
-            top: 0;
-            left: 10%;
-        }
-        @include xl {
-            width: 200px;
-            top: 0;
-            left: 20%;
-        }
-    }
+
     .anh_2 {
         @include xs {
             width: 100%;
@@ -49,21 +27,19 @@
         justify-content: center;
         position: absolute;
         @include xs {
-            //margin-left: 50%;
-            margin-left: 30%;
-            margin-right: 26%;
+            // margin-left: 30%;
+            // margin-right: 26%;
+            width: 50%;
+            margin-top: 15%;
         }
         @include sm {
-            //margin-left: 50%;
         }
         @include lg {
-            margin-left: 30%;
-            margin-right: 26%;
+            // margin-left: 30%;
+            // margin-right: 26%;
+            // bottom: 5%;
         }
         .arrow {
-            // border-top: 30px solid #a73b96;
-            //     border-left: 15px solid transparent;
-            //     border-right: 15px solid transparent;
             @include xs {
                 position: absolute;
                 z-index: 1;
@@ -104,10 +80,11 @@
             @include lg {
                 // width: 350px;
                 // height: 350px;
-                width: 70%;
+                width: 60%;
             }
         }
         .btXoay {
+            //animation: ring 3s 1s ease-in-out infinite;
             position: absolute;
             text-align: center;
             cursor: pointer;
@@ -145,5 +122,70 @@
                 }
             }
         }
+    }
+}
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+    5% {
+        transform: rotate(30deg);
+    }
+    10% {
+        transform: rotate(-28deg);
+    }
+    15% {
+        transform: rotate(34deg);
+    }
+    20% {
+        transform: rotate(-32deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    30% {
+        transform: rotate(-28deg);
+    }
+    35% {
+        transform: rotate(26deg);
+    }
+    40% {
+        transform: rotate(-24deg);
+    }
+    45% {
+        transform: rotate(22deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    55% {
+        transform: rotate(18deg);
+    }
+    60% {
+        transform: rotate(-16deg);
+    }
+    65% {
+        transform: rotate(14deg);
+    }
+    70% {
+        transform: rotate(-12deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-8deg);
+    }
+    85% {
+        transform: rotate(6deg);
+    }
+    90% {
+        transform: rotate(-4deg);
+    }
+    95% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(-1deg);
     }
 }

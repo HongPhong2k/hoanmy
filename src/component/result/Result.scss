@@ -1,6 +1,7 @@
 @import '../css/media.scss';
 @import '../css/reset.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
 .modal {
     font-family: 'Roboto';
     .blur {
@@ -20,6 +21,7 @@
             z-index: 10;
             width: 90%;
             //height: 45%;
+            //height: 270px;
             height: 270px;
         }
         @include sm {
@@ -54,8 +56,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            width: 60%;
-            height: 60%;
+            width: 70%;
+            height: 35%;
         }
         @include xl {
             position: fixed;
@@ -66,27 +68,7 @@
             width: 55%;
             height: 63%;
         }
-        .logo {
-            cursor: pointer;
-            @include xs {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                width: 15%;
-            }
-            @include sm {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                width: 15%;
-            }
-            @include xl {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                width: 20%;
-            }
-        }
+
         .anh-ketqua {
             @include xs {
                 width: 100%;
@@ -106,7 +88,7 @@
             }
         }
         .btn-cancel {
-            color: #333;
+            color: #487eb0;
             @include xs {
                 position: absolute;
                 top: 5px;
@@ -131,27 +113,27 @@
         }
         .hetluot {
             border-radius: 7px;
-            background-color: #e45eb1;
+            background-color: #487eb0;
             text-align: center;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             @include xs {
-                padding: 10px 20px;
+                padding: 20px 20px;
                 width: 60%;
             }
             @include sm {
-                padding: 10px 40px;
+                padding: 20px 40px;
             }
             @include md {
-                padding: 10px 60px;
+                padding: 20px 60px;
             }
             @include lg {
-                padding: 10px 40px;
+                padding: 20px 40px;
             }
             @include xl {
-                padding: 10px 60px;
+                padding: 20px 60px;
             }
             p {
                 color: #feca57;
@@ -170,49 +152,52 @@
         }
         .gift {
             border-radius: 7px;
-            background-color: #e45eb1;
+
+            background-color: #487eb0;
             text-align: center;
             @include xs {
                 position: absolute;
-                top: 30%;
+                top: 35%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 padding: 10px 20px;
-                width: 60%;
+                width: 80%;
+                font-size: 16px;
             }
             @include sm {
                 position: absolute;
-                top: 30%;
+                top: 35%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 padding: 10px 40px;
+                width: 60%;
             }
             @include md {
+                width: 50%;
                 position: absolute;
-                top: 30%;
+                top: 33%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                padding: 10px 60px;
+                padding: 30px 60px;
             }
             @include lg {
                 position: absolute;
-                top: 30%;
+                top: 33%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                padding: 10px 40px;
+                padding: 20px 40px;
             }
             @include xl {
                 position: absolute;
-                top: 30%;
+                top: 33%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 padding: 10px 60px;
             }
-            p {
-                color: white;
+            &__g {
+                color: black;
                 text-align: center;
                 @include xs {
-                    font-size: 14px;
                 }
                 @include sm {
                     font-size: 18px;
@@ -223,7 +208,8 @@
                 }
             }
             span {
-                color: #333;
+                color: white;
+                font-weight: 500;
                 text-transform: capitalize;
                 @include xs {
                 }
@@ -237,7 +223,7 @@
         .info {
             @include xs {
                 position: absolute;
-                top: 75%;
+                top: 80%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
@@ -255,18 +241,21 @@
             }
             @include xl {
                 position: absolute;
-                top: 70%;
+                top: 75%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
         }
-        .call {
+        .text-info {
+            color: black;
+            font-weight: 500;
             @include xs {
                 position: absolute;
-                top: 55%;
+                top: 57%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
+                font-size: 26px;
             }
             @include sm {
                 position: absolute;
@@ -283,16 +272,16 @@
             }
             @include xl {
                 position: absolute;
-                top: 50%;
+                top: 55%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-            p {
+            &__t {
                 text-transform: capitalize;
                 color: #333;
                 text-align: center;
                 @include xs {
-                    font-size: 10px;
+                    font-size: 12px;
                 }
                 @include sm {
                     font-size: 14px;

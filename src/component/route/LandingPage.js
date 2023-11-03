@@ -3,9 +3,9 @@ import Wheel from "../lucky wheel/Wheel";
 import "./LandingPage.scss";
 import React, { useEffect, useRef, useState } from "react";
 import InfoResult from "../info result/InfoResult";
-import banner from "../../image/banner.jpg";
-import bg from "../../image/3cfa0bc2484c9f12c65d.jpg";
 import Result from "../result/Result";
+import banner from "../../image/banner.png";
+import anh3 from "../../image/anh3-fix.png";
 const LandingPage = () => {
   const [isModal, setIsModal] = useState(false);
   const [result, setResult] = useState("");
@@ -48,8 +48,11 @@ const LandingPage = () => {
           <Wheel handleQuay={handleQuay} getResult={getResult} />
         </div>
         <div className="p">
-          <img src={bg} alt="anh" className="anh_3" />
+          <img src={anh3} alt="anh" className="anh_3" />
         </div>
+        {/* <div className="p">
+          <img src={anh4} alt="anh" className="anh_4" />
+        </div> */}
       </div>
 
       <ButtonWheel
