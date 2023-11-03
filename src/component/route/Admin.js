@@ -38,30 +38,29 @@ function AdminPage() {
   }, []);
   const getCustomer = () => {
     const storedValue = localStorage.getItem("TMVongQuayUser");
-    if (!storedValue) {
-      //navigate("/login");
-    } else {
-      const dataBody = {
-        code: "1236950748",
-      };
-      // fetch("https://tmsoftware.vn/Woay/select.php", {
-      //   method: "POST",
-      //   body: JSON.stringify(dataBody),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // })
-      //   .then((response) => response.text())
-      //   .then(console.log)
-      //   .then((result) => {
-      //     setValueData(result);
-      //   })
-      //   .catch((error) => {
-      //     // Handle any error that occurred during the request
-      //     console.error(error);
-      //   });
-    }
+    // if (!storedValue) {
+    //   //navigate("/login");
+    // } else {
+    const dataBody = {
+      code: "1236950748",
+    };
+    fetch("https://tmsoftware.vn/Woay/select.php", {
+      method: "POST",
+      body: JSON.stringify(dataBody),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setValueData(result);
+      })
+      .catch((error) => {
+        // Handle any error that occurred during the request
+        console.error(error);
+      });
   };
+  //};
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -163,32 +162,32 @@ function AdminPage() {
               </TableHead>
               <TableBody>
                 {valueData === "" ? (
-                  <div></div>
+                  <></>
                 ) : (
                   valueData
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row) => {
+                    .map((row, index) => {
                       return (
                         <TableRow
                           hover
                           role="checkbox"
                           tabIndex={-1}
-                          key={row.code}
+                          key={`${row.code}-${index}`}
                         >
-                          <TableCell key={row.id} style={{ padding: "8px" }}>
+                          <TableCell style={{ padding: "8px" }}>
                             {row.id}
                           </TableCell>
-                          <TableCell key={row.id} style={{ padding: "8px" }}>
-                            {row.nameFull}
+                          <TableCell style={{ padding: "8px" }}>
+                            {row.fullName}
                           </TableCell>
-                          <TableCell key={row.id} style={{ padding: "8px" }}>
-                            {row.namePhone}
+                          <TableCell style={{ padding: "8px" }}>
+                            {row.phone}
                           </TableCell>
-                          <TableCell key={row.id} style={{ padding: "8px" }}>
+                          <TableCell style={{ padding: "8px" }}>
                             {row.prize}
                           </TableCell>
-                          <TableCell key={row.id} style={{ padding: "8px" }}>
-                            {row.submission_date}
+                          <TableCell style={{ padding: "8px" }}>
+                            {row.ngay}
                           </TableCell>
                         </TableRow>
                       );

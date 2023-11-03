@@ -31,8 +31,7 @@ const FormUser = (props) => {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.text())
-      .then(console.log)
+      .then((response) => response.json())
       .then((result) => {
         console.log("data", dataBody);
         console.log("check result api: ", result);
@@ -64,7 +63,11 @@ const FormUser = (props) => {
     } else {
       refPhone.current.style.border = "none";
     }
-    if (phone.length < 10 || phone.match(/^[0-9]+$/) == null) {
+    if (
+      phone.length < 10 ||
+      phone.length > 11 ||
+      phone.match(/^[0-9]+$/) == null
+    ) {
       message.error("Số điện thoại không đúng");
       return;
     }
