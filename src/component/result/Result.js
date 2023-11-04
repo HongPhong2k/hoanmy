@@ -1,7 +1,7 @@
 import "./Result.scss";
 import FormUser from "../form/Form";
 
-import bgketqua from "../../image/bg-ketqua.png";
+import bgketqua from "../../image/bg-ketqua.jpg";
 import { MdOutlineCancel } from "react-icons/md";
 
 const Result = (props) => {

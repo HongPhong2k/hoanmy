@@ -43,7 +43,7 @@ function AdminPage() {
       navigate("/login");
     } else {
       const dataBody = {
-        code: "4453019749",
+        code: "7268361002",
       };
       fetch("https://tmsoftware.vn/Woay/API/select.php", {
         method: "POST",
@@ -64,7 +64,7 @@ function AdminPage() {
   };
   const handleDeleteUser = (phone) => {
     const dataBody = {
-      code: "4453019749",
+      code: "7268361002",
       phone: phone,
     };
     fetch("https://tmsoftware.vn/Woay/API/delete.php", {

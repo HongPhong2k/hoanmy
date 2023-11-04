@@ -39,12 +39,12 @@
 
     .btn-ok {
         border-radius: 3px;
-        color: white;
-        background-color: #333;
+        color: black;
+        background-color: white;
         width: fit-content;
         cursor: pointer;
         &:hover {
-            background-color: #121212;
+            background-color: #27ae60;
         }
         @include xs {
             margin-top: 3%;

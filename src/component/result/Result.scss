@@ -57,7 +57,7 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             width: 70%;
-            height: 35%;
+            height: 55%;
         }
         @include xl {
             position: fixed;
@@ -88,7 +88,7 @@
             }
         }
         .btn-cancel {
-            color: #487eb0;
+            color: #ccc;
             @include xs {
                 position: absolute;
                 top: 5px;
@@ -113,7 +113,7 @@
         }
         .hetluot {
             border-radius: 7px;
-            background-color: #487eb0;
+            background-color: #27ae60;
             text-align: center;
             position: absolute;
             top: 50%;
@@ -153,11 +153,11 @@
         .gift {
             border-radius: 7px;
 
-            background-color: #487eb0;
+            background-color: #27ae60;
             text-align: center;
             @include xs {
                 position: absolute;
-                top: 35%;
+                top: 33%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 padding: 10px 20px;
@@ -247,8 +247,8 @@
             }
         }
         .text-info {
-            color: black;
-            font-weight: 500;
+            color: white;
+
             @include xs {
                 position: absolute;
                 top: 57%;
@@ -278,7 +278,7 @@
             }
             &__t {
                 text-transform: capitalize;
-                color: #333;
+                color: white;
                 text-align: center;
                 @include xs {
                     font-size: 12px;

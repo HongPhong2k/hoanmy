@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import anh2 from "../../image/anh2.png";
-import vongquay from "../../image/vongquay.png";
+import vongquay from "../../image/VongQuay-PhuongAnh-02.png";
 import "./Modal.scss";
 import { MdOutlineCancel } from "react-icons/md";
-import quayngay from "../../image/NutVongQuay.png";
+import quayngay from "../../image/nut-quay.png";
 import muiten from "../../image/mui ten.png";
 const Modal = (props) => {
   const { handleQuay, getResult, resetModalWheel, handleSetModalButton } =
@@ -17,14 +17,14 @@ const Modal = (props) => {
   const refOutside = useRef(null);
 
   const values = [
-    "Tee Golf",
-    "Voucher giảm 01 triệu lớp học Golf",
-    "Nón Golf",
-    "Voucher 1 game 18 lỗ",
-    "Bóng Golf",
-    "Voucher 1 giờ practice",
-    "Voucher 100k",
-    "Găng tay Golf",
+    "01 phiếu giảm giá 50% cho dịch vụ giảm béo bụng",
+    "01 phiếu giảm 50 % cho mỡ vùng lưng, bắp tay ",
+    "01 lần chăm sóc làm ấm tử cung - điều hoà kinh lạc trị giá 500k",
+    "01 lần cấy Mesotherapy trị giá 5tr",
+    "01 Gói Giảm mỡ 10 buổi trị giá 6999k",
+    "01 lần thải độc thanh lọc độc tố và dưỡng nhan trị giá 500k",
+    "01 lần chải thông kinh lạc toàn thân trị giá 500k",
+    "01 lần Chemical Peel trị giá 3tr",
   ];
 
   const spinWheel = () => {
@@ -91,7 +91,7 @@ const Modal = (props) => {
   return (
     <>
       <div className="modal-quay" ref={refOutside}>
-        <img src={anh2} alt="anh" className="anh-modal" />
+        {/* <img src={anh2} alt="anh" className="anh-modal" /> */}
 
         <div className="vongquay-modal">
           <img src={muiten} alt="anh" className="arrow-modal" />
@@ -107,7 +107,7 @@ const Modal = (props) => {
             <img src={quayngay} alt="btn-quay" className="anh_btn-quay" />
           </div>
         </div>
-        <div
+        {/* <div
           className="btn-cancel"
           onClick={() => {
             resetModalWheel();
@@ -115,7 +115,7 @@ const Modal = (props) => {
           }}
         >
           <MdOutlineCancel />
-        </div>
+        </div> */}
       </div>
     </>
   );

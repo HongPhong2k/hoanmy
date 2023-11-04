@@ -10,7 +10,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.scss";
 function LoginPage() {
   const [valueUserName, setValueUserName] = useState("");
   const [valuePass, setValuePass] = useState("");
@@ -64,11 +64,12 @@ function LoginPage() {
     <div className="content-register-page">
       <Card sx={{ minWidth: 375 }}>
         <CardHeader
-          title="Themastersgolflounge"
+          title="Phương Anh Health Spa"
           subheader="Đăng nhập tài khoản"
           style={{
             color: "blue",
             fontWeight: 900,
+            textAlign: "center",
           }}
         />
         <CardContent style={{ textAlign: "start" }}>

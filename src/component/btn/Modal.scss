@@ -7,119 +7,62 @@
     align-items: center;
     justify-content: center;
 
-    .logo-modal {
-        position: absolute;
-        cursor: pointer;
-        @include xs {
-            width: 15%;
-            top: 10px;
-            left: 10px;
-        }
-        @include sm {
-            width: 15%;
-            top: 10px;
-            left: 10px;
-        }
-        @include xl {
-            width: 200px;
-            top: 0;
-            left: 0;
-        }
-    }
-    .anh-modal {
-        @include xs {
-            width: 80vw;
-            height: 40vh;
-            @media (orientation: landscape) {
-                width: 90vw;
-                height: 70vh;
-            }
-        }
-
-        @include sm {
-            width: 80vw;
-            height: 50vh;
-            @media (orientation: landscape) {
-                width: 80vw;
-                height: 70vh;
-            }
-        }
-        @include md {
-            width: 90vw;
-            height: 60vh;
-            @media (orientation: landscape) {
-                width: 80vw;
-                height: 70vh;
-            }
-        }
-        @include lg {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
     .vongquay-modal {
-        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
         @include xs {
         }
         @include sm {
         }
         @include lg {
-            // right: 10%;
-            // top: 15%;
         }
         .arrow-modal {
+            position: absolute;
+            z-index: 1;
+            top: -1%;
+
             @include xs {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include sm {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include md {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include lg {
-                position: absolute;
-                top: 0;
-                z-index: 1;
                 width: 50px;
                 height: 60px;
             }
         }
         .anh-vongquay-modal {
             @include xs {
-                height: 30vh;
+                height: 46vh;
                 @media (orientation: landscape) {
-                    height: 60vh;
+                    height: 80vh;
                 }
             }
             @include sm {
                 height: 40vh;
                 @media (orientation: landscape) {
-                    height: 60vh;
+                    height: 80vh;
                 }
             }
             @include md {
                 height: 50vh;
                 @media (orientation: landscape) {
-                    height: 60vh;
+                    height: 90vh;
                 }
             }
             @include lg {
                 width: 320px;
                 height: 320px;
+                @media (orientation: landscape) {
+                    height: 70vh;
+                    width: 70vh;
+                }
             }
         }
         .btXoay {

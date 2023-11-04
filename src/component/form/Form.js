@@ -17,7 +17,7 @@ const FormUser = (props) => {
   };
   const callAPI = () => {
     const dataBody = {
-      code: "4453019749",
+      code: "7268361002",
       name: name,
       phone: phone,
       prize: result,
@@ -75,7 +75,10 @@ const FormUser = (props) => {
     if (name && phone) {
       callAPI();
 
-      //localStorage.setItem("TMWheel", "OK");
+      // setModalFinalResult(true);
+      // handleSetModalButton(true);
+      // handleQuay(false);
+      // localStorage.setItem("TMWheel", "OK");
     }
   };
 

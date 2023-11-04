@@ -9,16 +9,23 @@
 
     .anh_2 {
         @include xs {
-            width: 100%;
-            height: 100%;
+            width: 220%;
+            object-fit: cover;
+            @media (orientation: landscape) {
+                width: 100%;
+            }
         }
         @include sm {
-            width: 100%;
-            height: 100%;
+            width: 220%;
+            object-fit: cover;
+            @media (orientation: landscape) {
+                width: 100%;
+            }
         }
         @include lg {
             width: 960px;
             height: 540px;
+            object-fit: unset;
         }
     }
     .vongquay {
@@ -27,49 +34,48 @@
         justify-content: center;
         position: absolute;
         @include xs {
-            // margin-left: 30%;
-            // margin-right: 26%;
-            width: 50%;
-            margin-top: 15%;
+            width: 95vw;
+            bottom: 35%;
+            @media (orientation: landscape) {
+                bottom: 10%;
+            }
         }
         @include sm {
+            width: 150vw;
+            @media (orientation: landscape) {
+                width: 100vw;
+            }
         }
         @include lg {
-            // margin-left: 30%;
-            // margin-right: 26%;
-            // bottom: 5%;
+            width: 80vw;
+        }
+        @include xl {
+            width: 90%;
         }
         .arrow {
+            position: absolute;
+            z-index: 1;
+            top: -1%;
             @include xs {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include sm {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include md {
-                position: absolute;
-                z-index: 1;
-                top: 0;
                 height: 20%;
             }
             @include lg {
-                position: absolute;
-                top: 0;
-                z-index: 1;
                 width: 50px;
                 height: 60px;
             }
         }
         .anh_vongquay {
             @include xs {
-                width: 130%;
-                //margin-right: 20%;
+                width: 100%;
+                @media (orientation: landscape) {
+                    width: 50%;
+                }
             }
             @include sm {
                 width: 60%;
@@ -84,7 +90,6 @@
             }
         }
         .btXoay {
-            //animation: ring 3s 1s ease-in-out infinite;
             position: absolute;
             text-align: center;
             cursor: pointer;
@@ -122,70 +127,5 @@
                 }
             }
         }
-    }
-}
-@keyframes ring {
-    0% {
-        transform: rotate(0);
-    }
-    5% {
-        transform: rotate(30deg);
-    }
-    10% {
-        transform: rotate(-28deg);
-    }
-    15% {
-        transform: rotate(34deg);
-    }
-    20% {
-        transform: rotate(-32deg);
-    }
-    25% {
-        transform: rotate(30deg);
-    }
-    30% {
-        transform: rotate(-28deg);
-    }
-    35% {
-        transform: rotate(26deg);
-    }
-    40% {
-        transform: rotate(-24deg);
-    }
-    45% {
-        transform: rotate(22deg);
-    }
-    50% {
-        transform: rotate(-20deg);
-    }
-    55% {
-        transform: rotate(18deg);
-    }
-    60% {
-        transform: rotate(-16deg);
-    }
-    65% {
-        transform: rotate(14deg);
-    }
-    70% {
-        transform: rotate(-12deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
-    80% {
-        transform: rotate(-8deg);
-    }
-    85% {
-        transform: rotate(6deg);
-    }
-    90% {
-        transform: rotate(-4deg);
-    }
-    95% {
-        transform: rotate(2deg);
-    }
-    100% {
-        transform: rotate(-1deg);
     }
 }

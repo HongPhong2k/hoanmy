@@ -5,16 +5,18 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-
-    .p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .parent {
         .anh_1 {
             @include xs {
                 width: 100%;
-                height: 100%;
+                height: 40vh;
+                object-fit: cover;
+                @media (orientation: landscape) {
+                    height: 100%;
+                }
             }
             @include sm {
                 width: 100%;
@@ -22,17 +24,16 @@
             }
             @include lg {
                 width: 960px;
-                // height: 500px;
-                // object-fit: cover;
             }
         }
         .anh_3 {
             @include xs {
-                width: 100%;
+                width: 120%;
+                object-fit: cover;
             }
             @include sm {
-                width: 100%;
-                height: 100%;
+                width: 120%;
+                object-fit: cover;
             }
             @include lg {
                 width: 960px;
@@ -53,76 +54,33 @@
                 //height: 168px;
             }
         }
-        // }
-        // .anh_6 {
-        //   @include xs {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include sm {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include lg {
-        //     width: 960px;
-        //     height: 545px;
-        //   }
-        // }
-        // .anh_7 {
-        //   @include xs {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include sm {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include lg {
-        //     width: 960px;
-        //     height: 743px;
-        //   }
-        // }
-        // .anh_8 {
-        //   @include xs {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include sm {
-        //     width: 100%;
-        //     height: 100%;
-        //   }
-        //   @include lg {
-        //     width: 960px;
-        //     height: 528px;
-        //   }
-        // }
-    }
 
-    .form {
-        position: relative;
-        .info {
-            position: absolute;
-            @include xs {
-                right: 10%;
-                top: 53%;
-                width: 30%;
+        .form {
+            position: relative;
+            .info {
+                position: absolute;
+                @include xs {
+                    right: 10%;
+                    top: 53%;
+                    width: 30%;
+                }
+                @include sm {
+                    right: 10%;
+                    top: 53%;
+                    width: 30%;
+                }
+                @include lg {
+                    top: 65%;
+                    left: 73%;
+                    transform: translate(-50%, -50%);
+                    max-width: 260px;
+                }
+                @include xl {
+                    transform: translate(-80%, -50%);
+                }
             }
-            @include sm {
-                right: 10%;
-                top: 53%;
-                width: 30%;
+            .btn-info {
             }
-            @include lg {
-                top: 65%;
-                left: 73%;
-                transform: translate(-50%, -50%);
-                max-width: 260px;
-            }
-            @include xl {
-                transform: translate(-80%, -50%);
-            }
-        }
-        .btn-info {
         }
     }
 }

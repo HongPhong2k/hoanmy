@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import anh2 from "../../image/anh2.png";
 
 import muiten from "../../image/mui ten.png";
-import vongquay from "../../image/vongquay.png";
-import quayngay from "../../image/NutVongQuay.png";
+import vongquay from "../../image/VongQuay-PhuongAnh-02.png";
+import quayngay from "../../image/nut-quay.png";
 import "./Wheel.scss";
 const Wheel = (props) => {
   const { handleQuay, getResult } = props;
@@ -13,14 +13,14 @@ const Wheel = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const values = [
-    "Tee Golf",
-    "Voucher giảm 01 triệu lớp học Golf",
-    "Nón Golf",
-    "Voucher 1 game 18 lỗ",
-    "Bóng Golf",
-    "Voucher 1 giờ practice",
-    "Voucher 100k",
-    "Găng tay Golf",
+    "01 phiếu giảm giá 50% cho dịch vụ giảm béo bụng",
+    "01 phiếu giảm 50 % cho mỡ vùng lưng, bắp tay ",
+    "01 lần chăm sóc làm ấm tử cung - điều hoà kinh lạc trị giá 500k",
+    "01 lần cấy Mesotherapy trị giá 5tr",
+    "01 Gói Giảm mỡ 10 buổi trị giá 6999k",
+    "01 lần thải độc thanh lọc độc tố và dưỡng nhan trị giá 500k",
+    "01 lần chải thông kinh lạc toàn thân trị giá 500k",
+    "01 lần Chemical Peel trị giá 3tr",
   ];
 
   const spinWheel = () => {

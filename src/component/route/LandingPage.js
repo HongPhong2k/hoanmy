@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import InfoResult from "../info result/InfoResult";
 import Result from "../result/Result";
 import banner from "../../image/banner.png";
-import anh3 from "../../image/anh3-fix.png";
+import anh3 from "../../image/anh3.png";
 const LandingPage = () => {
   const [isModal, setIsModal] = useState(false);
   const [result, setResult] = useState("");
@@ -41,13 +41,11 @@ const LandingPage = () => {
             : {}
         }
       >
-        <div className="p">
+        <div className="parent">
           <img src={banner} alt="anh" className="anh_1" />
-        </div>
-        <div>
-          <Wheel handleQuay={handleQuay} getResult={getResult} />
-        </div>
-        <div className="p">
+          <div>
+            <Wheel handleQuay={handleQuay} getResult={getResult} />
+          </div>
           <img src={anh3} alt="anh" className="anh_3" />
         </div>
         {/* <div className="p">
