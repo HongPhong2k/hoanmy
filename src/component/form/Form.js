@@ -1,13 +1,20 @@
 import { message } from "antd";
 import "./form.scss";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Select from "react-select";
+import styled from "styled-components";
 const FormUser = (props) => {
   const { setModalFinalResult, handleSetModalButton, handleQuay, result } =
     props;
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const refName = useRef(null);
   const refPhone = useRef(null);
+
+  const [arrApi, setArrApi] = useState([]);
+  const [arrTinh, setArrTinh] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSetName = (e) => {
     setName(e.target.value);
@@ -17,12 +24,12 @@ const FormUser = (props) => {
   };
   const callAPI = () => {
     const dataBody = {
-      code: "7268361002",
+      code: "4179802503",
       name: name,
       phone: phone,
       prize: result,
       sex: "",
-      address: "",
+      address: selectedOption.value,
     };
 
     fetch("https://tmsoftware.vn/Woay/API/add.php", {
@@ -34,8 +41,6 @@ const FormUser = (props) => {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("check result api: ", result);
-
         if (result && result["message"] === "already") {
           message.error("Số điện thoại đã được dùng");
         } else if (result && result["message"] === "success") {
@@ -49,39 +54,93 @@ const FormUser = (props) => {
         console.error(error);
       });
   };
+  const isVietnamesePhoneNumber = (number) => {
+    return /(03|05|07|08|09)+([0-9]{8})\b/.test(number);
+  };
   const checkForm = () => {
     if (!name) {
       refName.current.focus();
-      refName.current.style.border = "2px solid red";
+      refName.current.style.border = "1px solid red";
     } else {
       refName.current.style.border = "none";
     }
     if (!phone) {
       refPhone.current.focus();
-      refPhone.current.style.border = "2px solid red";
+      refPhone.current.style.border = "1px solid red";
       return;
     } else {
       refPhone.current.style.border = "none";
     }
+    console.log("check is number ", isVietnamesePhoneNumber(phone));
     if (
-      phone.length < 10 ||
-      phone.length > 10 ||
-      phone.match(/^[0-9]+$/) == null
+      // phone.length < 10 ||
+      // phone.length > 10 ||
+      // phone.match(/^[0-9]+$/) == null ||
+      !isVietnamesePhoneNumber(phone)
     ) {
       message.error("Số điện thoại không đúng");
       return;
     }
-
+    if (!selectedOption) {
+      message.error("Bạn chưa nhập địa chỉ");
+      return;
+    }
     if (name && phone) {
-      callAPI();
+      //callAPI();
 
-      // setModalFinalResult(true);
-      // handleSetModalButton(true);
-      // handleQuay(false);
-      // localStorage.setItem("TMWheel", "OK");
+      setModalFinalResult(true);
+      handleSetModalButton(true);
+      handleQuay(false);
+      //localStorage.setItem("TMWheel", "OK");
     }
   };
 
+  useEffect(() => {
+    fetch("https://provinces.open-api.vn/api/")
+      .then((response) => response.json())
+      .then((data) => customArrTinh(data));
+  }, []);
+
+  const customArrTinh = (arrApi) => {
+    let arr = [];
+    if (arrApi) {
+      arrApi.map((item) => {
+        arr.push({
+          value: item.name,
+          label: item.name,
+        });
+      });
+      setArrTinh(arr);
+    }
+  };
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      //background: "#fff",
+      //borderColor: "#9e9e9e",
+
+      minHeight: "30px",
+      height: "30px",
+    }),
+
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+      padding: "0 6px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+    }),
+  };
   return (
     <div className="form">
       <input
@@ -101,8 +160,18 @@ const FormUser = (props) => {
           handleSetPhone(e);
         }}
       ></input>
-      <div className="btn-ok" onClick={checkForm}>
-        Xác Nhận
+      <Select
+        className="selectt"
+        options={arrTinh}
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        placeholder="Khu vực"
+        styles={customStyles}
+      />
+      <div className="btn-div">
+        <div className="btn-ok" onClick={checkForm}>
+          Xác Nhận
+        </div>
       </div>
     </div>
   );

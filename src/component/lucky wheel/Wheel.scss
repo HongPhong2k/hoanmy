@@ -33,25 +33,6 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        @include xs {
-            width: 95vw;
-            bottom: 35%;
-            @media (orientation: landscape) {
-                bottom: 10%;
-            }
-        }
-        @include sm {
-            width: 150vw;
-            @media (orientation: landscape) {
-                width: 100vw;
-            }
-        }
-        @include lg {
-            width: 80vw;
-        }
-        @include xl {
-            width: 90%;
-        }
         .arrow {
             position: absolute;
             z-index: 1;
@@ -72,54 +53,68 @@
         }
         .anh_vongquay {
             @include xs {
-                width: 100%;
+                height: 45vh;
                 @media (orientation: landscape) {
-                    width: 50%;
+                    height: 80vh;
                 }
             }
             @include sm {
-                width: 60%;
+                height: 50vh;
+                @media (orientation: landscape) {
+                    height: 80vh;
+                }
             }
             @include md {
-                width: 55%;
+                height: 60vh;
+                @media (orientation: landscape) {
+                    height: 90vh;
+                }
             }
             @include lg {
-                // width: 350px;
-                // height: 350px;
-                width: 60%;
+                @media (orientation: landscape) {
+                    height: 62vh;
+                    width: 62vh;
+                }
+            }
+            @include xl {
+                @media (orientation: landscape) {
+                    height: 60vh;
+                    width: 60vh;
+                }
             }
         }
         .btXoay {
             position: absolute;
             text-align: center;
             cursor: pointer;
-            @include xs {
-                //margin-right: 20%;
-            }
-            @include sm {
-            }
-            @include lg {
-            }
             .anh_btn-quay {
                 @include xs {
-                    height: 30px;
-                    width: 30px;
+                    height: 55px;
+                    width: 55px;
                     &:hover {
                         transform: scale(1.3);
                         transition: 0.5s;
                     }
                 }
                 @include sm {
-                    height: 40px;
-                    width: 40px;
+                    height: 70px;
+                    width: 70px;
+                    &:hover {
+                        transform: scale(1.3);
+                        transition: 0.5s;
+                    }
+                }
+                @include md {
+                    height: 80px;
+                    width: 80px;
                     &:hover {
                         transform: scale(1.3);
                         transition: 0.5s;
                     }
                 }
                 @include lg {
-                    height: 50px;
-                    width: 50px;
+                    height: 70px;
+                    width: 70px;
                     &:hover {
                         transform: scale(1.3);
                         transition: 0.5s;

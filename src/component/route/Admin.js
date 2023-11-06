@@ -43,7 +43,7 @@ function AdminPage() {
       navigate("/login");
     } else {
       const dataBody = {
-        code: "7268361002",
+        code: "4179802503",
       };
       fetch("https://tmsoftware.vn/Woay/API/select.php", {
         method: "POST",
@@ -64,7 +64,7 @@ function AdminPage() {
   };
   const handleDeleteUser = (phone) => {
     const dataBody = {
-      code: "7268361002",
+      code: "4179802503",
       phone: phone,
     };
     fetch("https://tmsoftware.vn/Woay/API/delete.php", {
@@ -195,6 +195,17 @@ function AdminPage() {
                   <TableCell
                     align="left"
                     sx={{
+                      width: 100,
+                      backgroundColor: "teal",
+                      color: "white",
+                      padding: "7px",
+                    }}
+                  >
+                    Địa chỉ
+                  </TableCell>
+                  <TableCell
+                    align="left"
+                    sx={{
                       width: 110,
                       backgroundColor: "teal",
                       color: "white",
@@ -241,6 +252,9 @@ function AdminPage() {
                           </TableCell>
                           <TableCell style={{ padding: "8px" }}>
                             {row.prize}
+                          </TableCell>
+                          <TableCell style={{ padding: "8px" }}>
+                            {row.address}
                           </TableCell>
                           <TableCell style={{ padding: "8px" }}>
                             {row.ngay}

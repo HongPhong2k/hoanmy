@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import anh2 from "../../image/anh2.png";
-import vongquay from "../../image/VongQuay-PhuongAnh-02.png";
+import anh2 from "../../image/anh2.jpg";
+import vongquay from "../../image/VongQuay-HoanMy-02.png";
 import "./Modal.scss";
 import { MdOutlineCancel } from "react-icons/md";
-import quayngay from "../../image/nut-quay.png";
+import quayngay from "../../image/nutquay.png";
 import muiten from "../../image/mui ten.png";
 const Modal = (props) => {
   const { handleQuay, getResult, resetModalWheel, handleSetModalButton } =
@@ -17,14 +17,14 @@ const Modal = (props) => {
   const refOutside = useRef(null);
 
   const values = [
-    "01 phiếu giảm giá 50% cho dịch vụ giảm béo bụng",
-    "01 phiếu giảm 50 % cho mỡ vùng lưng, bắp tay ",
-    "01 lần chăm sóc làm ấm tử cung - điều hoà kinh lạc trị giá 500k",
-    "01 lần cấy Mesotherapy trị giá 5tr",
-    "01 Gói Giảm mỡ 10 buổi trị giá 6999k",
-    "01 lần thải độc thanh lọc độc tố và dưỡng nhan trị giá 500k",
-    "01 lần chải thông kinh lạc toàn thân trị giá 500k",
-    "01 lần Chemical Peel trị giá 3tr",
+    "Giảm 15% Bill",
+    "Voucher 500.000đ",
+    "Chăm Sóc Da Cao Cấp 8.000.000đ",
+    "Voucher 1.000.000đ",
+    "Khử Môi 1.500.000đ",
+    "Voucher 2.000.000đ",
+    "Xóa Mày 1.500.000đ",
+    "Xóa nhăn 8.000.000đ",
   ];
 
   const spinWheel = () => {
@@ -93,16 +93,15 @@ const Modal = (props) => {
       <div className="modal-quay" ref={refOutside}>
         {/* <img src={anh2} alt="anh" className="anh-modal" /> */}
 
-        <div className="vongquay-modal">
+        <div className="vongquay-btn">
           <img src={muiten} alt="anh" className="arrow-modal" />
           <img
             src={vongquay}
             alt="vong quay"
             ref={wheelRef}
-            className="anh-vongquay-modal"
+            className="vongquay-modal"
           />
 
-          <div style={{ height: "10px" }}></div>
           <div className="btXoay" onClick={() => spinWheel()}>
             <img src={quayngay} alt="btn-quay" className="anh_btn-quay" />
           </div>

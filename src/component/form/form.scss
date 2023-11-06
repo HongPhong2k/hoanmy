@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 .form {
     font-family: 'Roboto';
+
     @include xs {
         width: 100%;
     }
@@ -12,39 +13,47 @@
     @include lg {
         width: 100%;
     }
+
     .field {
         display: block;
-        border-radius: 2px;
+        border-radius: 5px;
         font-family: 'Roboto';
         color: black;
         font-weight: 500;
         @include xs {
-            padding: 2%;
+            padding: 7px;
             margin-bottom: 5px;
-            //width: 200px;
-            width: 100%;
+            //width: 250px;
+            width: 60vw;
+            font-size: 15px;
         }
         @include sm {
-            padding: 4%;
+            //padding: 4%;
             margin-bottom: 5px;
-            width: 100%;
-            //width: 250px;
+            padding: 10px;
+            width: 40vw;
         }
         @include lg {
-            padding: 4%;
+            //padding: 4%;
+            padding: 10px;
             margin-bottom: 5px;
             width: 260px;
         }
     }
-
+    .btn-div {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
     .btn-ok {
         border-radius: 3px;
         color: black;
         background-color: white;
         width: fit-content;
         cursor: pointer;
+
         &:hover {
-            background-color: #27ae60;
+            background-color: #e7790b;
         }
         @include xs {
             margin-top: 3%;
@@ -59,4 +68,6 @@
             padding: 3% 5%;
         }
     }
+}
+.selectt {
 }

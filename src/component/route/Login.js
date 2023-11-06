@@ -64,7 +64,7 @@ function LoginPage() {
     <div className="content-register-page">
       <Card sx={{ minWidth: 375 }}>
         <CardHeader
-          title="Phương Anh Health Spa"
+          title="Thẩm Mỹ Quốc Tế Hoàn Mỹ"
           subheader="Đăng nhập tài khoản"
           style={{
             color: "blue",

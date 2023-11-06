@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 import "./ButtonWheel.scss";
 
 import Modal from "./Modal";
-import anhbutton from "../../image/VongQuay-PhuongAnh-02.png";
+import anhbutton from "../../image/VongQuay-HoanMy-02.png";
 const ButtonWheel = forwardRef((props, ref) => {
   const [isWheel, setIsWheel] = useState(false);
   const { handleSetModalButton, getResult, handleQuay, modalFinal } = props;

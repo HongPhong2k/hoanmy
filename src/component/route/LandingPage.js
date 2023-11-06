@@ -4,14 +4,16 @@ import "./LandingPage.scss";
 import React, { useEffect, useRef, useState } from "react";
 import InfoResult from "../info result/InfoResult";
 import Result from "../result/Result";
-import banner from "../../image/banner.png";
-import anh3 from "../../image/anh3.png";
+import banner from "../../image/banner.jpg";
+import anh3 from "../../image/anh3.jpg";
+import { Divider } from "antd";
 const LandingPage = () => {
   const [isModal, setIsModal] = useState(false);
   const [result, setResult] = useState("");
   const refModalButton = useRef();
   const [onModalButton, setOnModalButton] = useState(false);
   const [modalFinal, setModalFinal] = useState(false);
+
   const handleQuay = (check) => {
     setIsModal(check);
   };
@@ -47,10 +49,15 @@ const LandingPage = () => {
             <Wheel handleQuay={handleQuay} getResult={getResult} />
           </div>
           <img src={anh3} alt="anh" className="anh_3" />
+          <div
+            style={{ textAlign: "center", fontFamily: "Roboto" }}
+            className="by"
+            onClick={() => window.open("https://tmsoftware.vn/", "_blank")}
+          >
+            Design Created by <b>tmsoftware.vn</b>
+          </div>
+          <Divider />
         </div>
-        {/* <div className="p">
-          <img src={anh4} alt="anh" className="anh_4" />
-        </div> */}
       </div>
 
       <ButtonWheel

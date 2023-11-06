@@ -1,6 +1,6 @@
 @import '../css/media.scss';
 @import '../css/reset.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 .container {
     position: relative;
     z-index: 1;
@@ -12,7 +12,7 @@
         .anh_1 {
             @include xs {
                 width: 100%;
-                height: 40vh;
+                height: 30vh;
                 object-fit: cover;
                 @media (orientation: landscape) {
                     height: 100%;
@@ -28,11 +28,11 @@
         }
         .anh_3 {
             @include xs {
-                width: 120%;
+                width: 100%;
                 object-fit: cover;
             }
             @include sm {
-                width: 120%;
+                width: 100%;
                 object-fit: cover;
             }
             @include lg {
@@ -82,5 +82,15 @@
             .btn-info {
             }
         }
+    }
+}
+.by {
+    cursor: pointer;
+    color: #ccc;
+    @include xs {
+        font-size: 10px;
+    }
+    @include sm {
+        font-size: 16px;
     }
 }

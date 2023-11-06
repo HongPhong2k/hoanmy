@@ -1,7 +1,7 @@
 import "./Result.scss";
 import FormUser from "../form/Form";
 
-import bgketqua from "../../image/bg-ketqua.jpg";
+import bgketqua from "../../image/anh2.jpg";
 import { MdOutlineCancel } from "react-icons/md";
 
 const Result = (props) => {
@@ -39,6 +39,7 @@ const Result = (props) => {
               <p className="gift__g">
                 Chúc mừng bạn đã trúng phần quà: <span>{result}</span>
               </p>
+              {/* <p>Để lại thông tin nhận ngay quà xịn !</p> */}
             </div>
             <div className="text-info">
               <p className="text-info__t">

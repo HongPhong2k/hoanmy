@@ -23,7 +23,7 @@
 
         .group {
             border-radius: 5px;
-            background-color: #27ae60;
+            background-color: #feca57;
             text-align: center;
             @include xs {
                 width: 80vw;
@@ -37,15 +37,16 @@
             }
 
             p {
-                color: black;
+                color: #fff;
                 text-transform: capitalize;
             }
             span {
-                color: white;
+                color: black;
                 font-weight: 500;
                 text-transform: uppercase;
             }
             .btn-off {
+                color: white;
                 position: absolute;
                 top: 0;
                 right: 0;

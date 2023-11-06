@@ -6,7 +6,7 @@ import LoginPage from "./component/route/Login";
 import ChangePassword from "./component/route/ChangePassword";
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/admin" element={<AdminPage />} />
